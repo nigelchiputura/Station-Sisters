@@ -1,0 +1,59 @@
+.main-header {
+  background: var(--bg-body);
+  border-bottom: 1px solid var(--border-light);
+  transition: background var(--transition-base), border var(--transition-base);
+
+  .logo img {
+    height: 52px;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .header-icons {
+    display: flex;
+    align-items: center;
+
+    .icon-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition-fast);
+
+      &:hover {
+        background: var(--bg-soft);
+      }
+
+      i {
+        font-size: 22px;
+        color: var(--text-secondary);
+        transition: color var(--transition-fast);
+      }
+
+      span {
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.2;
+
+        strong {
+          font-weight: 600;
+          color: var(--text-primary);
+        }
+      }
+
+      &:hover i {
+        color: var(--color-primary);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+      }
+    }
+  }
+}

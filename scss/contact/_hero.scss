@@ -1,0 +1,37 @@
+.contact-hero {
+  background: var(--bg-soft);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+
+  /* soft background visuals like screenshots */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/contact-hero-bg.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .contact-hero-content {
+    position: relative;
+    z-index: 2;
+
+    .breadcrumb {
+      font-size: 14px;
+      color: var(--text-muted);
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+  }
+}

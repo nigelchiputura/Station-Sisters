@@ -1,0 +1,87 @@
+.shop-hero {
+  position: relative;
+  padding: 80px 0;
+  // background: var(--bg-soft);
+  background-image: 
+        linear-gradient(
+            rgba(236, 92, 143, 0.7),
+            rgba(0, 0, 0, 0.8)
+        ),
+        url(../../assets/images/inventory/hero-3.webp);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    transition: background var(--transition-base);
+
+  .shop-hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    font-size: 42px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #fff;
+  }
+
+  .breadcrumb-nav {
+    font-size: 14px;
+    color: var(--text-muted);
+
+    a {
+      // color: var(--text-secondary);
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    span {
+      margin: 0 6px;
+    }
+
+    .current {
+      // color: var(--text-primary);
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+    }
+  }
+
+  .hero-decor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.9;
+    pointer-events: none;
+
+    img {
+      max-width: 260px;
+    }
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+}
+
+/* Responsive cleanup */
+@media (max-width: 991px) {
+  .shop-hero {
+    padding: 60px 0;
+
+    .hero-decor {
+      display: none;
+    }
+  }
+}

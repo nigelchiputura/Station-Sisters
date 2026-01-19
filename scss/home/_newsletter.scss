@@ -1,0 +1,76 @@
+.newsletter {
+  // background: var(--bg-soft);
+background-image: 
+      linear-gradient(
+          rgba(236, 92, 143, 0.7),
+          rgba(0, 0, 0, 0.8)
+      ),
+      url(../../assets/images/news-letter.webp);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 90px 0;
+  position: relative;
+  text-align: center;
+  transition: background var(--transition-base);
+
+  h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+  }
+
+  .newsletter-form {
+    gap: 10px;
+    margin-top: 30px;
+
+    input {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      border: 1px solid var(--border-light);
+      transition:
+        border var(--transition-fast),
+        background var(--transition-base);
+
+      &::placeholder {
+        color: var(--text-muted);
+      }
+
+      &:focus {
+        border-color: var(--color-primary);
+        box-shadow: none;
+      }
+    }
+
+    .subscribe-btn {
+      background: var(--color-accent);
+      color: #fff;
+      border-radius: var(--radius-md);
+      padding: 14px 28px;
+      font-weight: 600;
+      border: none;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+
+      &:hover {
+        background: var(--color-primary);
+        transform: translateY(-1px);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+      }
+    }
+  }
+}

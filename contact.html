@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Sisters’ Station</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar py-2">
+        <div class="container d-flex justify-content-between">
+            <a href="/shop.html" class="top-link">Shop Now</a>
+            <a href="/contact.html" class="top-link">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="main-header py-4">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="logo">
+                <img src="assets/images/logo.svg" alt="Sisters Station">
+            </div>
+
+            <div class="search-bar d-flex" role="search">
+
+                <select class="form-select category-select">
+                    <option>All Categories</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Search products...">
+                <button class="btn search-btn" aria-label="Search products">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+
+            <div class="header-icons d-flex gap-4">
+                <div class="icon-item" role="button" tabindex="0">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Sign In<br><strong>Account</strong></span>
+                </div>
+
+                <div class="icon-item" role="button" tabindex="0">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="icon-item" role="button" tabindex="0">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>$0.00<br><strong>My Cart</strong></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= NAV ================= -->
+    <nav class="main-nav" role="navigation">
+        <div class="container d-flex justify-content-between align-items-center">
+            <ul class="nav-links d-flex gap-4">
+                <li><a href="#">Home</a></li>
+                <li><a href="/shop.html">Shop</a></li>
+                <li><a class="active" href="/contact.html">Contact Us</a></li>
+            </ul>
+            <div class="deal-link">
+                <i class="fa fa-gear"></i> Today’s Deal
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= THEME TOGGLE (FIXED) ================= -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa fa-moon"></i>
+    </button>
+
+    <!-- ================= CONTACT HERO ================= -->
+    <section class="shop-hero">
+        <div class="container">
+            <div class="shop-hero-content text-center">
+                <nav class="breadcrumb-nav">
+                    <a href="/index.html">Home</a>
+                    <span>/</span>
+                    <span class="current">Contact Us</span>
+                </nav>
+
+                <h1>Contact Us</h1>
+            </div>
+        </div>
+
+        <!-- Decorative images -->
+        <div class="hero-decor left">
+            <img src="assets/images/shop-hero-left.png" alt="">
+        </div>
+
+        <div class="hero-decor right">
+            <img src="assets/images/shop-hero-right.png" alt="">
+        </div>
+    </section>
+
+    <!-- ================= MAP + CONTACT FORM ================= -->
+    <section class="contact-main py-5">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+
+                <!-- MAP -->
+                <div class="col-lg-7">
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps?q=Shop%2011,%2027%20Lanark%20Road,%20Avondale&output=embed"
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- CONTACT FORM -->
+                <div class="col-lg-5">
+                    <div class="contact-form-wrapper">
+                        <h3>Get In Touch With Us</h3>
+                        <p>
+                            If you wish to directly reach us, please fill out the form below.
+                        </p>
+
+                        <form class="contact-form">
+                            <div class="mb-3">
+                                <label>Your name</label>
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Your email</label>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Subject</label>
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+
+                            <div class="mb-4">
+                                <label>Your message (optional)</label>
+                                <textarea class="form-control" rows="5" placeholder="Write your message"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn contact-submit">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT INFO STRIP ================= -->
+    <section class="contact-info-strip">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Address -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i class="fa fa-location-dot"></i>
+                        </div>
+                        <p>
+                            Shop 11, 27 Lanark Road,<br>
+                            Avondale
+                        </p>
+                        <p>
+                            Shop 38, 1 Portal Road,<br>
+                            Highlands Shop
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <p>
+                            Call us:<br>
+                            (+263) 71-162-7999
+                        </p>
+                        <p>
+                            Call us:<br>
+                            (+263) 71-334-1663
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <p>
+                            Mail us:<br>
+                            info@sistersstation.co.zw
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Hours -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i class="fa fa-clock"></i>
+                        </div>
+                        <p>
+                            Open time:<br>
+                            08:00AM – 5:00PM
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= NEWSLETTER ================= -->
+    <section class="newsletter py-5">
+        <div class="container text-center">
+            <h2>Subscribe To Our Newsletter</h2>
+            <p>Subscribe to our latest newsletter to get news about special discount upcoming sales</p>
+
+            <form class="newsletter-form d-flex justify-content-center mt-4">
+                <input type="email" class="form-control w-50" placeholder="Email">
+                <button class="btn subscribe-btn">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="fade-in footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>About Our Store</h5>
+                    <p>
+                        Welcome to our store, where we pride ourselves on providing exceptional
+                        products and unparalleled customer service.
+                    </p>
+                </div>
+
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2">
+                    <h5>Your Account</h5>
+                    <ul>
+                        <li>Checkout</li>
+                        <li>Order Tracking</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2">
+                    <h5>Useful Links</h5>
+                    <ul>
+                        <li>FAQs</li>
+                        <li>Sitemap</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <p>Shop 11, 27 Lanark Road, Avondale</p>
+                    <p>(+263) 71-162-7999</p>
+                    <p>(+263) 71-334-1663</p>
+                    <p>info@sistersstation.co.zw</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center mt-4">
+                © 2026 Sisters’ Station
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/fadeIn.js"></script>
+</body>
+
+</html>

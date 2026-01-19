@@ -1,0 +1,56 @@
+.theme-toggle {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 999;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--color-primary);
+
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+
+  transition:
+    background var(--transition-base),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+
+  i {
+    font-size: 20px;
+    transition: transform var(--transition-fast);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+/* 🌙 Dark-mode specific polish */
+[data-theme="dark"] .theme-toggle {
+  background: var(--bg-soft);
+  border-color: var(--border-light);
+}
+
+.theme-toggle:hover i {
+  color: var(--color-primary);
+}

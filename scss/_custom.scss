@@ -8,74 +8,134 @@
 // =================================================
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-// =================================================
-// CSS THEME VARIABLES (LIGHT MODE DEFAULT)
-// These are runtime variables that change with dark mode
-// =================================================
+/* ===============================
+   DESIGN TOKENS & THEME VARIABLES
+================================ */
 
 :root {
-    /* Base surfaces */
-    --bg: #f9f9f9;
-    --surface: #ffffff;
-    --surface-alt: #e9ecef;
+  /* Brand */
+  --color-primary: rgb(243, 184, 140);
+  --color-accent: rgb(236, 92, 143);
 
-    /* Text colors */
-    --text: #191b17;
-    --text-muted: #6b7280;
-    --heading: #343434;
+  /* Text */
+  --text-primary: #222;
+  --text-secondary: #666;
+  --text-muted: #999;
 
-    /* Brand colors */
-    --primary: #3b82f6;   // Replaces $mount-meadow entirely
-    --accent: #6366f1;
+  /* Backgrounds */
+  --bg-body: #ffffff;
+  --bg-soft: #fafafa;
+  --bg-section: #f9f9f9;
+  --bg-card: #ffffff;
 
-    /* UI elements */
-    --border: #e5e7eb;
+  /* Borders */
+  --border-light: #eee;
+  --border-accent: rgba(243, 184, 140, 0.35);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Motion */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
+/* ===============================
+   PROJECT ALIASES & EXTENSIONS
+================================ */
 
-// =================================================
-// DARK MODE (SYSTEM PREFERENCE)
-// Automatically switches when OS is in dark mode
-// =================================================
+:root {
+  /* Page backgrounds */
+  --bg-page: var(--bg-section);
+
+  /* Inputs */
+  --input-bg: #ffffff;
+
+  /* Borders */
+  --border-color: var(--border-light);
+
+  /* Accent system */
+  --accent: var(--color-primary);
+  --accent-soft: rgba(243, 184, 140, 0.25);
+  --accent-contrast: #222;
+
+  /* Motion */
+  --transition: var(--transition-base);
+
+  /* Shadows */
+  --shadow-soft: var(--shadow-sm);
+
+  /* Map */
+  --map-filter: none;
+}
+
+/* ===============================
+   SYSTEM DARK MODE
+================================ */
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #0f1115;
-        --surface: #161a22;
-        --surface-alt: #1f2430;
+  :root {
+    --bg-body: #121212;
+    --bg-soft: #1a1a1a;
+    --bg-section: #181818;
+    --bg-card: #1f1f1f;
 
-        --text: #e5e7eb;
-        --text-muted: #9ca3af;
-        --heading: #f3f4f6;
+    --text-primary: #f1f1f1;
+    --text-secondary: #bbbbbb;
+    --text-muted: #888;
 
-        --border: #262b36;
-        // --primary remains the same (brand consistency)
-    }
+    --border-light: #2a2a2a;
+    --border-accent: rgba(243, 184, 140, 0.25);
+
+    --shadow-sm: none;
+    --shadow-md: none;
+
+    --input-bg: #1a1a1a;
+    --border-color: #2a2a2a;
+    --accent-contrast: #ffffff;
+
+    /* Google Maps dark adjustment */
+    --map-filter: grayscale(1) invert(0.9);
+  }
 }
 
+/* ===============================
+   MANUAL OVERRIDE (TOGGLE)
+================================ */
 
-// =================================================
-// SCSS VARIABLES (STRUCTURAL / LOGICAL USE ONLY)
-// These reference CSS variables where appropriate
-// =================================================
+[data-theme="dark"] {
+  --bg-body: #121212;
+  --bg-soft: #1a1a1a;
+  --bg-section: #181818;
+  --bg-card: #1f1f1f;
 
-// Brand
-$primary: var(--primary);   // Uses CSS variable (dark-mode safe)
-$accent: var(--accent);
+  --text-primary: #f1f1f1;
+  --text-secondary: #bbbbbb;
+  --text-muted: #888;
 
-// Neutrals (used for calculations, shadows, rgba, etc.)
-$night-rider: #343434;
+  --border-light: #2a2a2a;
+  --border-accent: rgba(243, 184, 140, 0.25);
 
-// Background helpers (legacy-friendly)
-$white-smoke: #e9ecef;
+  --shadow-sm: none;
+  --shadow-md: none;
 
-// Motion
-$transition: all 0.3s ease-in-out;
+  --input-bg: #1a1a1a;
+  --border-color: #2a2a2a;
+  --accent-contrast: #ffffff;
 
+  /* Google Maps dark adjustment */
+  --map-filter: grayscale(1) invert(0.9);
+}
 
-// =================================================
-// GLOBAL RESET & BASE STYLES
-// =================================================
+/* ===============================
+   BASE ELEMENTS
+================================ */
 
 * {
     font-family: 'Nunito Sans', 'Trebuchet MS', Arial, sans-serif;
@@ -85,13 +145,27 @@ $transition: all 0.3s ease-in-out;
 }
 
 html {
-    color: var(--text); // Uses CSS variable for dark mode
+    color: var(--text-primary);
+    background-color: var(--bg-body);
     font-size: clamp(1rem, 2.5vh, 1.5rem);
     font-weight: 300;
     line-height: 1.5;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
-    background-color: var(--bg);
+}
+
+body {
+  background: var(--bg-body);
+  color: var(--text-primary);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+hr {
+  border-color: var(--border-light);
 }
 
 img {
@@ -100,7 +174,7 @@ img {
 
 a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 li {

@@ -1,0 +1,16 @@
+// -------------------------------------------------
+// FADE-IN UTILITY CLASS
+// Designed for JS-triggered scroll animations
+// -------------------------------------------------
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition:
+        opacity 0.8s ease-out,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
