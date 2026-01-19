@@ -1,0 +1,108 @@
+// =================================================
+// GOOGLE FONTS
+// =================================================
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+// =================================================
+// BOOTSTRAP CSS
+// =================================================
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// =================================================
+// CSS THEME VARIABLES (LIGHT MODE DEFAULT)
+// These are runtime variables that change with dark mode
+// =================================================
+
+:root {
+    /* Base surfaces */
+    --bg: #f9f9f9;
+    --surface: #ffffff;
+    --surface-alt: #e9ecef;
+
+    /* Text colors */
+    --text: #191b17;
+    --text-muted: #6b7280;
+    --heading: #343434;
+
+    /* Brand colors */
+    --primary: #3b82f6;   // Replaces $mount-meadow entirely
+    --accent: #6366f1;
+
+    /* UI elements */
+    --border: #e5e7eb;
+}
+
+
+// =================================================
+// DARK MODE (SYSTEM PREFERENCE)
+// Automatically switches when OS is in dark mode
+// =================================================
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0f1115;
+        --surface: #161a22;
+        --surface-alt: #1f2430;
+
+        --text: #e5e7eb;
+        --text-muted: #9ca3af;
+        --heading: #f3f4f6;
+
+        --border: #262b36;
+        // --primary remains the same (brand consistency)
+    }
+}
+
+
+// =================================================
+// SCSS VARIABLES (STRUCTURAL / LOGICAL USE ONLY)
+// These reference CSS variables where appropriate
+// =================================================
+
+// Brand
+$primary: var(--primary);   // Uses CSS variable (dark-mode safe)
+$accent: var(--accent);
+
+// Neutrals (used for calculations, shadows, rgba, etc.)
+$night-rider: #343434;
+
+// Background helpers (legacy-friendly)
+$white-smoke: #e9ecef;
+
+// Motion
+$transition: all 0.3s ease-in-out;
+
+
+// =================================================
+// GLOBAL RESET & BASE STYLES
+// =================================================
+
+* {
+    font-family: 'Nunito Sans', 'Trebuchet MS', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color: var(--text); // Uses CSS variable for dark mode
+    font-size: clamp(1rem, 2.5vh, 1.5rem);
+    font-weight: 300;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+li {
+    list-style-type: none;
+}
